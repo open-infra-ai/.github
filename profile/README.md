@@ -1,18 +1,24 @@
-# AICL-Lab
+# open-infra-ai
 
-面向 AI Infra（推理部署 / 推理加速方向）的工程作品集组织。五个主仓构成一条
-「CUDA 基础 → Triton 算子 → kernel 深挖 → 推理运行时 → Serving 控制面」的能力链，
-方法论与阅读顺序见 [cuda-kernel-academy/LEARNING_PATH.md](https://github.com/AICL-Lab/cuda-kernel-academy/blob/master/LEARNING_PATH.md)。
+AI Infra 工程学习作品集组织：从 CUDA 内核到推理 serving 的完整能力链，
+每个作品都有独立参考实现与差分验证。整体学习路径与方法论见
+[LEARNING_PATH.md](https://github.com/open-infra-ai/open-infra-ai/blob/master/LEARNING_PATH.md)。
 
 ## 项目地图
 
-| 仓库 | 定位 | 状态 |
-|------|------|------|
-| [tiny-llm](https://github.com/AICL-Lab/tiny-llm) | ⭐ 旗舰：CUDA C++ 推理引擎（W8A16 量化 / GGUF / KV Cache） | 开发中，见其 ROADMAP |
-| [cuflash-attn](https://github.com/AICL-Lab/cuflash-attn) | 从零实现的 FlashAttention（前向+反向，多精度） | kernel 深度作品 |
-| [cuda-kernel-academy](https://github.com/AICL-Lab/cuda-kernel-academy) | CUDA 系统学习路径（SGEMM 阶梯 → kernel 库 → 推理组件） | 维护模式 |
-| [triton-fused-ops](https://github.com/AICL-Lab/triton-fused-ops) | Triton 融合算子 + 参考实现 + 差分测试 | 维护模式 |
-| [paged-infer](https://github.com/AICL-Lab/paged-infer) | Rust 版 Serving 控制面（Paged KV + continuous batching） | 架构练习作品 |
+| 层 | 仓库 | 定位 | 状态 |
+|----|------|------|------|
+| L1 | [cuda-foundations](https://github.com/open-infra-ai/cuda-foundations) | 从 SGEMM 到推理组件的系统性 CUDA 算子工程学习路径 | active |
+| L1 | [triton-fused-ops](https://github.com/open-infra-ai/triton-fused-ops) | 精简 Triton 算子（RMSNorm+RoPE / GatedMLP / FA 前向 / SGEMM）+ torch.library 注册 | stable |
+| L1 | [cuflash-attn](https://github.com/open-infra-ai/cuflash-attn) | 从零实现的 FlashAttention 前后向（FP16/BF16 WMMA + FlashDecoding） | stable |
+| L2 | [tiny-llm](https://github.com/open-infra-ai/tiny-llm) | ⭐ CUDA C++ 推理引擎（W8A16 量化 / GGUF / 分页 KV），导出 C ABI | active |
+| L3 | [paged-infer](https://github.com/open-infra-ai/paged-infer) | Rust Serving 控制面（Paged KV + continuous batching），经 C ABI 接 tiny-llm | active |
+| L0 | [open-infra-ai](https://github.com/open-infra-ai/open-infra-ai) | meta 仓：landing、学习路径、跨仓契约、计划档案 | active |
+
+阅读顺序：`cuda-foundations → triton-fused-ops → cuflash-attn → tiny-llm → paged-infer`。
+
+状态语义：`active` = 学习/演进中；`stable` = 作品完成，只修正确性 bug 与文档。
+权威状态注册表在 [meta 仓 README](https://github.com/open-infra-ai/open-infra-ai)。
 
 ## 工程原则
 
