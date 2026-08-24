@@ -1,5 +1,7 @@
 # open-infra-ai
 
+个人维护者：[holtwood](https://github.com/holtwood) · C++ / CUDA / LLM inference systems
+
 AI Infra 工程学习作品集组织：从 CUDA 内核到推理 serving 的完整能力链，
 每个作品都有独立参考实现与差分验证。整体学习路径与方法论见
 [LEARNING_PATH.md](https://github.com/open-infra-ai/open-infra-ai/blob/master/LEARNING_PATH.md)。
