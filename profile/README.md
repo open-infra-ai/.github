@@ -12,12 +12,12 @@ AI Infra 工程学习作品集组织：从 CUDA 内核到推理 serving 的完�
 |----|------|------|------|
 | L1 | [cuda-foundations](https://github.com/open-infra-ai/cuda-foundations) | 从 SGEMM 到推理组件的系统性 CUDA 算子工程学习路径 | active |
 | L1 | [triton-fused-ops](https://github.com/open-infra-ai/triton-fused-ops) | 精简 Triton 算子（RMSNorm+RoPE / GatedMLP / FA 前向 / SGEMM）+ torch.library 注册 | stable |
-| L1 | [cuflash-attn](https://github.com/open-infra-ai/cuflash-attn) | 从零实现的 FlashAttention 前后向（FP16/BF16 WMMA + FlashDecoding） | stable |
+| L1 | [cuflash](https://github.com/open-infra-ai/cuflash) | 从零实现的 FlashAttention 前后向（FP16/BF16 WMMA + FlashDecoding） | stable |
 | L2 | [tiny-llm](https://github.com/open-infra-ai/tiny-llm) | ⭐ CUDA C++ 推理引擎（W8A16 量化 / GGUF / 分页 KV），导出 C ABI | active |
-| L3 | [paged-infer](https://github.com/open-infra-ai/paged-infer) | Rust Serving 控制面（Paged KV + continuous batching），经 C ABI 接 tiny-llm | active |
+| L3 | [paged-serving](https://github.com/open-infra-ai/paged-serving) | Rust Serving 控制面（Paged KV + continuous batching），经 C ABI 接 tiny-llm | active |
 | L0 | [open-infra-ai](https://github.com/open-infra-ai/open-infra-ai) | meta 仓：landing、学习路径、跨仓契约、计划档案 | active |
 
-阅读顺序：`cuda-foundations → triton-fused-ops → cuflash-attn → tiny-llm → paged-infer`。
+阅读顺序：`cuda-foundations → triton-fused-ops → cuflash → tiny-llm → paged-serving`。
 
 状态语义：`active` = 学习/演进中；`stable` = 作品完成，只修正确性 bug 与文档。
 权威状态注册表在 [meta 仓 README](https://github.com/open-infra-ai/open-infra-ai)。
