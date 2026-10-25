@@ -28,6 +28,7 @@ HTTP/SSE → continuous batching → Paged KV/block tables
 | C++ 教学 | [cpp-high-performance-guide](https://github.com/open-infra-ai/cpp-high-performance-guide) | C++20 性能工程：内存、SIMD、并发、NUMA、GEMM 案例 | stable |
 | 旗舰数据面 | [tiny-llm](https://github.com/open-infra-ai/tiny-llm) | 真实权重、量化、decode、KV、C ABI | active |
 | 旗舰控制面 | [paged-serving](https://github.com/open-infra-ai/paged-serving) | 调度、Paged KV、HTTP/SSE、serving 评测 | active |
+| 上游研究 | [kvtier](https://github.com/open-infra-ai/kvtier) | SGLang HiCache/KV tiering 复现实验与上游贡献（尚无审计结果包） | active |
 
 ## 从哪里开始
 
