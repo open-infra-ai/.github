@@ -25,6 +25,7 @@ HTTP/SSE → continuous batching → Paged KV/block tables
 | CUDA 深挖 | [cuflash](https://github.com/open-infra-ai/cuflash) | FlashAttention 前后向、Tensor Core、FlashDecoding | stable |
 | CUDA 基础 | [cuda-foundations](https://github.com/open-infra-ai/cuda-foundations) | SGEMM 优化阶梯与可复用推理组件 | stable |
 | Triton 对照 | [trifuse](https://github.com/open-infra-ai/trifuse) | 融合算子、参考实现、`torch.library` | stable |
+| C++ 教学 | [cpp-high-performance-guide](https://github.com/open-infra-ai/cpp-high-performance-guide) | C++20 性能工程：内存、SIMD、并发、NUMA、GEMM 案例 | stable |
 | 旗舰数据面 | [tiny-llm](https://github.com/open-infra-ai/tiny-llm) | 真实权重、量化、decode、KV、C ABI | active |
 | 旗舰控制面 | [paged-serving](https://github.com/open-infra-ai/paged-serving) | 调度、Paged KV、HTTP/SSE、serving 评测 | active |
 
